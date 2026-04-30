@@ -1,0 +1,79 @@
+################################################################################
+# Q&R NEXUS – Optimized Git Ignore (C++ / Drogon / Sciter / vcpkg)
+# Keeps build configuration files so the project can be built directly after clone
+################################################################################
+
+# === Build Output (local only) ===
+/build/
+/bin/
+/out/
+/dist/
+/Debug/
+/Release/
+/x64/
+/x86/
+
+# === vcpkg cache (safe to rebuild later) ===
+/vcpkg_buildtrees/
+/vcpkg/packages/
+/vcpkg/downloads/
+/vcpkg/installed/
+!/vcpkg.json            # keep manifest for dependencies
+
+# === CMake generated (but keep project-level CMake files) ===
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake.user
+# keep project build config files
+!CMakeLists.txt
+!CMakePresets.json
+
+# === Visual Studio & MSVC metadata ===
+.vs/
+*.vcxproj*
+*.sln
+*.opensdf
+*.suo
+*.ncb
+*.user
+*.filters
+*.ide
+
+# === Compiler intermediates ===
+*.obj
+*.pdb
+*.ipdb
+*.idb
+*.ilk
+*.manifest
+*.tlog
+*.pch
+*.res
+*.rsp
+*.exe.embed.manifest
+*.exe.embed.manifest.res
+
+# === Logs & crash dumps ===
+*.log
+*.dmp
+
+# === System / Editor junk ===
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.tmp
+~$*
+
+# === Private or sensitive files ===
+/server/config/*.json
+/secrets.json
+.env
+*.key
+*.pem
+
+# === Documentation output (keep sources) ===
+/docs/*.html
+/docs/*.pdf

@@ -1,0 +1,38 @@
+﻿{
+  "version": 3,
+  "cmakeMinimumRequired": { "major": 3, "minor": 24 },
+  "configurePresets": [
+    {
+      "name": "default",
+      "displayName": "Default Build (Windows + vcpkg + Ninja)",
+      "generator": "Ninja",
+
+      "binaryDir": "${sourceDir}/build",
+
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "vcpkg/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      },
+      "warnings": {
+        "dev": true,
+        "deprecated": false
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "build",
+      "displayName": "Build All Targets",
+      "configurePreset": "default",
+      "jobs": 12
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "test",
+      "displayName": "Run Unit Tests (if added later)",
+      "configurePreset": "default"
+    }
+  ]
+}
